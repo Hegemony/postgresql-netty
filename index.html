@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>postgresql-netty by mauricio</title>
+    
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>postgresql-netty</h1>
+        <p>An async PostgreSQL driver written in Scala using the Netty library</p>
+        <p class="view"><a href="https://github.com/mauricio/postgresql-netty">View the Project on GitHub <small>mauricio/postgresql-netty</small></a></p>
+        <ul>
+          <li><a href="https://github.com/mauricio/postgresql-netty/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/mauricio/postgresql-netty/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/mauricio/postgresql-netty">Fork On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>postgresql-netty - an async Netty/NIO based PostgreSQL driver written in Scala</h1>
+
+<p>The main goal of this project is to implement a performant and fully functional async PostgreSQL driver. This project
+has no interest in JDBC, it's supposed to be a clean room implementation for people interested in talking directly
+to PostgreSQL.</p>
+
+<p><a href="http://www.postgresql.org/docs/devel/static/protocol.html">PostgreSQL protocol information and definition can be found here</a></p>
+
+<h2>What can it do now?</h2>
+
+<ul>
+<li>connect to a database without authentication (it only connects if it gets an AuthenticationOk message)</li>
+<li>receive parameters</li>
+<li>receive database notices</li>
+<li>execute direct queries</li>
+<li>execute queries using prepared statements/portals</li>
+<li>parses all basic PostgreSQL types, other types are parsed as string</li>
+<li>date, time and timestamp types are handled as JodaTime objects and <strong>not</strong> as <strong>java.util.Date</strong> objects</li>
+</ul><h2>What is missing?</h2>
+
+<ul>
+<li>stored procedures</li>
+<li>authentication mechanisms</li>
+<li>benchmarks and more testing</li>
+</ul><h2>What are the design goals?</h2>
+
+<ul>
+<li>fast, fast and faster</li>
+<li>small memory footprint</li>
+<li>avoid copying data as much as possible (we're always trying to use wrap and slice on buffers)</li>
+<li>easy to use, call a method, get a future or a callback and be happy</li>
+<li>never, ever, block (the only real blocking right now is at the connection pool)</li>
+<li>all features covered by tests</li>
+</ul><h2>How can I help?</h2>
+
+<ul>
+<li>checkout the source code</li>
+<li>find bugs, find places where performance can be improved</li>
+<li>check the <strong>What is missing</strong> piece</li>
+<li>send a pull request with specs</li>
+</ul><p>This project is freely available under the MIT licence, use it at your own risk.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/mauricio">mauricio</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-31162872-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
